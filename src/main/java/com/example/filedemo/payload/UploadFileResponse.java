@@ -7,11 +7,30 @@ public class UploadFileResponse {
     private String fileType;
     private long size;
 
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
+    private boolean success;
+
     public UploadFileResponse(String fileName, String fileDownloadUri, String fileType, long size) {
         this.fileName = fileName;
         this.fileDownloadUri = fileDownloadUri;
         this.fileType = fileType;
         this.size = size;
+    }
+
+    public UploadFileResponse(String fileName, String fileDownloadUri, String fileType, long size,
+        boolean success) {
+        this.fileName = fileName;
+        this.fileDownloadUri = fileDownloadUri;
+        this.fileType = fileType;
+        this.size = size;
+        this.success = success;
     }
 
     public String getFileName() {
